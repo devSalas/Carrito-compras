@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  table *{
+  border: 1px solid rgba(0, 0, 0, 0.205);
+ }
+</style>
+<body >
+  <div class="lg:h-screen">
+    <h1 class="text-4xl font-bold text-center pt-5">Shopping</h1>
+    <div class="bg-white">
+      <div class="max-w-2xl mx-auto py-1 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Compra ahora!</h2>
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div class="item group relative" data-id="1">
+            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+              <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a  href="#" class="font-bold text-lg">
+                    <!-- <span aria-hidden="true" class="absolute inset-0"></span> -->
+                   <span data-name>Polo</span> 
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Negro</p>
+              </div>
+              <p data-buy class="text-sm font-medium text-gray-900">$49</p>
+            </div>
+          </div>
+          <div class="item group relative " data-id="2">
+            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+              <img src="./img/pantalon.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover lg:w-full lg:h-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a data-name href="#" class="font-bold text-lg">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    <span data-name >Pantalon</span> 
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Azul</p>
+              </div>
+              <p data-buy class="text-sm font-medium text-gray-900">$35</p>
+            </div>
+          </div>
+          <div class="item group relative" data-id="3">
+            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+              <img src="./img/shoes.webp" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a  href="#" class="font-bold text-lg">
+                    <span aria-hidden="true" class="absolute inset-0 "></span>
+                     <span data-name>Zapatillas</span>
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Rosado</p>
+              </div>
+              <p data-buy class="text-sm font-medium text-gray-900">79$</p>
+            </div>
+          </div>
+          <div class=" item group relative" data-id="4">
+            <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+              <img src="./img/sweater.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+            </div>
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-sm text-gray-700">
+                  <a data-name href="#" class="font-bold text-lg">
+                    <span aria-hidden="true" class="absolute inset-0"></span>
+                     <span data-name>Chompa</span>
+                  </a>
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">Azul</p>
+              </div>
+              <p data-buy class="text-sm font-medium text-gray-900">$95</p>
+            </div>
+          </div>
+        </div>
+        <table class="hidden w-full">
+          <thead>
+            <th>Cantidad</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Total</th>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+
+  </div>
+
+
+
+<template>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+</template>
+
+<script src="app.js" type="module"></script>
+
+</body>
+</html>
