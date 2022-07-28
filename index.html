@@ -15,12 +15,12 @@
     box-sizing: border-box;
   }
   table *{
-  border: 1px solid rgba(0, 0, 0, 0.205);
+  border: 1px solid rgba(133, 143, 225, 0.205);
  }
 </style>
 <body >
   <div class="lg:h-screen">
-    <h1 class="text-4xl font-bold text-center pt-5">Shopping</h1>
+    <!-- <h1 class="text-4xl font-bold text-center pt-5">Shopping</h1> -->
     <div class="bg-white">
       <div class="max-w-2xl mx-auto py-1 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Compra ahora!</h2>
@@ -39,7 +39,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Negro</p>
               </div>
-              <p data-buy class="text-sm font-medium text-gray-900">$49</p>
+              <p data-buy class="text-sm font-medium text-gray-900">$<span data-buy>49</span></p>
             </div>
           </div>
           <div class="item group relative " data-id="2">
@@ -56,7 +56,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Azul</p>
               </div>
-              <p data-buy class="text-sm font-medium text-gray-900">$35</p>
+              <p data-buy class="text-sm font-medium text-gray-900">$<span data-buy>35</span></p>
             </div>
           </div>
           <div class="item group relative" data-id="3">
@@ -73,7 +73,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Rosado</p>
               </div>
-              <p data-buy class="text-sm font-medium text-gray-900">79$</p>
+              <p data-buy class="text-sm font-medium text-gray-900"><span data-buy>79</span>$</p>
             </div>
           </div>
           <div class=" item group relative" data-id="4">
@@ -83,27 +83,33 @@
             <div class="mt-4 flex justify-between">
               <div>
                 <h3 class="text-sm text-gray-700">
-                  <a data-name href="#" class="font-bold text-lg">
+                  <a data-name class="font-bold text-lg">
                     <span aria-hidden="true" class="absolute inset-0"></span>
                      <span data-name>Chompa</span>
                   </a>
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Azul</p>
               </div>
-              <p data-buy class="text-sm font-medium text-gray-900">$95</p>
+              <p  class="text-sm font-medium text-gray-900">$<span data-buy>95</span> </p>
             </div>
           </div>
         </div>
-        <table class="hidden w-full">
-          <thead>
+        <table class="w-full">
+          <thead class="text-center bg-blue-600  ">
             <th>Cantidad</th>
-            <th>Producto</th>
+            <th >Producto</th>
             <th>Precio</th>
             <th>Total</th>
           </thead>
           <tbody>
 
-          </tbody>
+          </tbody class="text-center">
+          <tfoot class="bg-slate-300 text-center">
+            <tr>
+              <td  colspan="3" >total</td>
+              <td data-total></td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>
@@ -114,11 +120,11 @@
 
 
 <template>
-  <tr>
+  <tr class="text-center">
     <td>1</td>
     <td>2</td>
     <td>3</td>
-    <td>4</td>
+    <td >4</td>
   </tr>
 </template>
 
