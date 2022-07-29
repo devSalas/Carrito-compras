@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slider</title>
-  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
@@ -39,7 +38,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Negro</p>
               </div>
-              <p data-buy class="text-sm font-medium text-gray-900">$<span data-buy>49</span></p>
+              <p data-buy class="text-sm font-medium text-gray-900"><span data-buy>49</span>$</p>
             </div>
           </div>
           <div class="item group relative " data-id="2">
@@ -56,7 +55,7 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Azul</p>
               </div>
-              <p data-buy class="text-sm font-medium text-gray-900">$<span data-buy>35</span></p>
+              <p data-buy class="text-sm font-medium text-gray-900"><span data-buy>35</span>$</p>
             </div>
           </div>
           <div class="item group relative" data-id="3">
@@ -90,11 +89,11 @@
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">Azul</p>
               </div>
-              <p  class="text-sm font-medium text-gray-900">$<span data-buy>95</span> </p>
+              <p  class="text-sm font-medium text-gray-900"><span data-buy>95</span>$ </p>
             </div>
           </div>
         </div>
-        <table class="w-full">
+        <table class=" hidden w-full mb-100">
           <thead class="text-center bg-blue-600  ">
             <th>Cantidad</th>
             <th >Producto</th>
@@ -106,8 +105,8 @@
           </tbody class="text-center">
           <tfoot class="bg-slate-300 text-center">
             <tr>
-              <td  colspan="3" >total</td>
-              <td data-total></td>
+              <td colspan="3" > total</td>
+              <td ><span data-total></span>$</td>
             </tr>
           </tfoot>
         </table>
@@ -121,7 +120,11 @@
 
 <template>
   <tr class="text-center">
-    <td>1</td>
+    <td>
+      <button class="btn btn-menos bg-rose-500 px-2 my-1 rounded-sm">-</button>
+      <span></span>
+      <button class="btn-mas bg-green-500 px-2 my-1 rounded-sm">+</button>
+    </td>
     <td>2</td>
     <td>3</td>
     <td >4</td>

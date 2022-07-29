@@ -1,11 +1,11 @@
 const d=document
 export default function buyCar(){
-  console.log("hola")
   const $table=d.querySelector("table")
   const $tbody=d.querySelector("table tbody")
-  const $total=d.querySelector("tfoot td[data-total]");
-  const products=[]
+  let $total=d.querySelector("tfoot span[data-total]");
+  let products=[]
   const $enlaces=d.querySelectorAll(".item a");
+
   $enlaces.forEach(el=>{
     el.addEventListener("click",e=>{
       e.preventDefault();
@@ -16,7 +16,7 @@ export default function buyCar(){
 
      el.addEventListener("click",(e)=>{
       
-      const $id=el.dataset.id;
+      const $id=Number(el.dataset.id);
       const $name= el.querySelector("span[data-name]").textContent
       const $buy=Number(el.querySelector("span[data-buy]").textContent)
       
@@ -32,7 +32,6 @@ export default function buyCar(){
 
       if(!isProduct){
         products.push(product)
-        console.log(product)
       }else{
         isProduct.total+=isProduct.buy
         isProduct.cantidad+=1;
@@ -43,7 +42,6 @@ export default function buyCar(){
       products.forEach(el=>total+=el.total)
       $total.textContent=total
 
-
     })  
 
     
@@ -53,15 +51,18 @@ export default function buyCar(){
 
 
   function getIntoDate(el){
+
     const $fragment=d.createDocumentFragment();
-    
     $table.classList.remove("hidden")
-    console.log($tbody)
     $tbody.textContent="";
-    function plantilla({name,buy,total,cantidad}){
+
+
+    function plantilla({id,name,buy,total,cantidad}){
       const $template=d.querySelector("template").content
       const $tds=$template.querySelectorAll("td")
-      $tds[0].textContent=cantidad;
+      $tds[0].querySelector("span").textContent=cantidad
+      $tds[0].querySelector(".btn-mas").dataset.id=id
+      $tds[0].querySelector(".btn-menos").dataset.id=id
       $tds[1].textContent=name
       $tds[2].textContent=buy
       $tds[3].textContent=total
@@ -73,8 +74,48 @@ export default function buyCar(){
       plantilla(el)
 
     })
-    $tbody.appendChild($fragment)
- 
-  }
   
+    $tbody.appendChild($fragment)
+
+
+  }
+   $tbody.addEventListener("click",(e)=>{
+      let temp=[...products]
+      //console.log(temp)
+      const $id=Number(e.target.dataset.id)
+      //console.log($id)
+      if(e.target.matches(".btn-mas")){
+        const item=temp.find(el=>el.id ===$id)
+        //if(item.cantidad<7){
+          item.cantidad+=1
+          item.total=item.cantidad*item.buy
+          products=temp
+          getIntoDate(products)
+          let aumento=0
+          console.log(products)
+          products.map(el=>aumento+=el.total)
+          $total.textContent=aumento
+          
+        //}
+      }
+      if(e.target.matches(".btn-menos")){
+        const item=temp.find(el=>el.id ===$id)
+        //if(item.cantidad>1){
+          item.cantidad-=1
+          item.total-=item.buy
+          products=temp
+          getIntoDate(products)
+          let aumento=0
+          products.map(el=>aumento+=el.total)
+          $total.textContent=aumento
+         
+        //}
+        
+       
+      }
+      
+      
+    })
+    
 }
+//
